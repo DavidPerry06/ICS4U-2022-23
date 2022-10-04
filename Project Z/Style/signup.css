@@ -16,6 +16,8 @@ body {
   overflow-y: hidden;
 }
 
+/** container properties */
+
 .F-container {
   max-width: 1400px;
   margin: auto;
@@ -37,6 +39,8 @@ body {
   justify-content: center;
 }
 
+/** change content color */
+
 .b-container span{
   color: #E8CEBF;
 }
@@ -48,6 +52,8 @@ body {
   text-underline-offset: 5px;
 }
 
+/** navbar */
+
 .F-navbar ul li a{
   font-size: 16px;
 }
@@ -56,6 +62,8 @@ a{
   text-decoration: none;
   color: #4F4846;
 }
+
+
 
 .F-navbar {
   border-bottom: 10px solid #4F4846;
@@ -114,6 +122,10 @@ a{
   justify-self: center;
 }
 
+/** form submittion, not fully mine, style taken from https://freshdesignweb.com/css-registration-form-templates/ #25 */
+
+/**properties of the description */
+
 
 .description {
   font-size: 14px;
@@ -122,19 +134,20 @@ a{
   margin: -2px 0 45px;
 }
 
-
+/** display postioning of .input */
 .input {
   display: flex;
   align-items: center;
 }
 
+/** properties of button */
 
 .button {
   height: 44px;
   border: none;
 }
 
-  
+  /** input box for email, properties */
 #email {
   width: 75%;
   background: #FDF8F5;
@@ -145,6 +158,7 @@ a{
   border-radius: 5px 0 0 5px;
 }
 
+/** submittion button's properties */
 
 #submit {
   width: 25%;
@@ -159,12 +173,14 @@ a{
   transition: background .3s ease-in-out;
 }
   
-
+/** submittion button hover properties */
 #submit:hover {
   outline: none;
   outline: 1px solid #266150;
   box-shadow: 0 0 2px #266150;
 }
+
+/** hamburger, not mine, can be found at link on style.css page */
 
 *, *:before, *:after 
 { box-sizing: border-box; }
@@ -331,6 +347,8 @@ footer a{
    padding-right: 20px;
 }
 
+  /** media affects the contents displayed, properties of certain elemtns, as well as hover reactions */
+
 @media(max-width:1145px){
  
 
@@ -379,6 +397,7 @@ footer a{
   
 }
 
+/**affects forms properties */
 @media(max-width:809px){
   
 form{
@@ -387,18 +406,5 @@ form{
 }
 
 
-}
-
-@media(max-width:650px){
-
-
-}
-
-@media(max-width:612px){
-
-}
-@media(max-width:583px){
-
-  
 }
 

@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
+/**global styles */
+
+/**sets all default paddings, width and height properties, as well as default font */
 * {
    box-sizing: border-box;
    padding: 0;
@@ -7,6 +10,7 @@
    font-family: "Poppins", sans-serif;
  }
 
+/** applies properties to the <body> as well as locks the overflow y */
  body {
    font-family: 'Poppins', sans-serif;
    font-size: 16px;
@@ -16,6 +20,7 @@
    overflow-y: hidden;
  }
 
+
  .container {
    max-width: 1400px;
    margin: auto;
@@ -23,16 +28,19 @@
    padding: 0 30px;
    padding-right: 20px;
 }
-
+/** sets links to a color and removes styling */
 a{
    text-decoration: none;
    color: #4F4846;
 }
 
+/**sets certain things to a color with priorty and adds a underline decorations */
 .colour{
    color: #FDF8F5 !important;
    text-decoration: underline #266150;
 }
+
+/**applies certian properties to the current pages navbar header */
 
 .current{
    color: #266150;
@@ -40,6 +48,8 @@ a{
    text-decoration-line: underline;
    text-underline-offset: 5px;
 }
+
+/** navbar settings */
 
 .navbar {
    border-bottom: 10px solid #4F4846;
@@ -73,6 +83,7 @@ a{
    border-radius: 5%;
 }
 
+/**applies outline when hovered over */
 .navbar ul li:nth-of-type(5):hover{
    outline: none;
    outline: 3px solid #266150;
@@ -85,13 +96,15 @@ a{
    text-underline-offset: 5px;
  }
 
+ /**seperates header from list items */
+
 .navbar h1{
    color: #4F4846;
    font-size: 40px;
    margin-right: auto;
 }
 
-
+/**grid settings */
 
 .grid-container{
    display: grid;
@@ -134,6 +147,8 @@ a{
    text-align: center;
 }
 
+/** sets image properties */
+
 img{
    width: 100%;
    height: 100%;
@@ -141,11 +156,13 @@ img{
    object-position: bottom;
 }
 
+/** Hamburger menu setup and movements and screen settings. Hamburger code not mine, from https://alvarotrigo.com/blog/hamburger-menu-css */
 *, *:before, *:after 
 { box-sizing: border-box; }
 
 html { font-size: 18px; }
 
+/** altered class to work with my page */
 .body {
    display: none;
    color: #e0e4cc;
@@ -155,7 +172,7 @@ html { font-size: 18px; }
    overflow-x: hidden;
 }
 
-label .menu {
+label .menu {  /** determines position and size of hamburger menu's backdrop */
   position: absolute;
   right: -100px;
   top: -100px;
@@ -171,7 +188,7 @@ label .menu {
   
 }
 
-label .hamburger {
+label .hamburger { /** determines position and size of hamburger menu "button" */
   position: absolute;
   top: 130px;
   left: 40px;
@@ -185,7 +202,8 @@ label .hamburger {
   transition: .5s ease-in-out;
 }
 
-label .hamburger:after, label .hamburger:before {
+/** sets the timing of the animation for the hamburger menu's "button */
+label .hamburger:after, label .hamburger:before { 
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   content: "";
@@ -202,11 +220,15 @@ label .hamburger:after { bottom: -10px; }
 
 label input { display: none; }
 
+/** sets up the properties for the expanding menu when you open the hamburger menu */
+
 label input:checked + .menu {
   box-shadow: 0 0 0 100vw #E8CEBF, 0 0 0 100vh #E8CEBF;
   border-radius: 0;
   
 }
+
+/** sets the animation for the top and bottom line of the hamburger menu */
 
 label input:checked + .menu .hamburger {
   -webkit-transform: rotate(45deg);
@@ -230,6 +252,7 @@ label input:checked + .menu .hamburger:before {
 
 label input:checked + .menu + ul { opacity: 1; }
 
+/** brings in the hamburger nav bar on top of the backdrop */
 label ul {
   z-index: 200;
   position: absolute;
@@ -244,10 +267,12 @@ label ul {
   border-radius: 30px;
 }
 
+/** sets properties of the list items */
 label ul li {
    margin: 10px 20px 10px 20px !important;
 }
 
+/** sets properties of links in the hamburger */
 label a {
   margin-bottom: 1em;
   display: block;
@@ -255,6 +280,8 @@ label a {
   text-decoration: none;
 
 }
+
+/** footer and content properties */
 
  footer{
    background-color: #4F4846;
@@ -293,7 +320,7 @@ footer a{
     padding-right: 20px;
 }
 
-
+/** media to alter container sizes, grid shapes, hide/display certain elements, and alter properties */
 
 @media(max-width:1145px){
    .container{
@@ -350,6 +377,8 @@ footer a{
    
 }
 
+/** alters grid ratio, affects content alignments and locations of grid sections*/
+
 @media(max-width:715px){
    
    .grid-container{
@@ -388,6 +417,8 @@ footer a{
 
 
 }
+
+/** all @media below change padding or grid ratios to better fit the screen */
 
 @media(max-width:665px){
    .grid-container .item:nth-of-type(1){
