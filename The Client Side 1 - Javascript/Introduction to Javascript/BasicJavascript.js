@@ -5,6 +5,7 @@
 // console.log(1 === true);
 // console.log(typeof(1));
 // console.log(typeof(true));
+//test
 
 // !== compares values and type, ensures that they are not the same
 
@@ -68,7 +69,7 @@
 
 // console.log(car.make);
 // console.log(car['make']);
-
+/*
 "rooms"; 
     {
       "id": "Hallway",
@@ -102,5 +103,5 @@ for (const key of room) {
         }
     
 }
-
+*/
 
