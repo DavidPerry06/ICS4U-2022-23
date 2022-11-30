@@ -1,0 +1,224 @@
+
+  .centered {
+    position: absolute;
+    color: white;
+    top: 25%;
+    font-size: 100px;
+    left: 49%;
+    font-weight:700;
+    transform: translate(-50%, -50%);
+  }
+
+table {
+    margin: auto;
+}
+
+#but-col{
+    padding-top: 0.23rem;
+    padding-bottom: 0.23rem;
+} 
+
+#away {
+    padding-top: 0.23rem;
+    padding-bottom: 0.23rem;
+    width: auto;
+}
+
+#gamesTable{
+    padding-top: 2.5rem;
+}
+
+#navbarBasicExample{
+    background-color: #003068;
+}
+
+
+.select {
+    max-height: 50px !important;
+}
+
+#NAVBAR{
+    height: 100px;
+    background-color: #003068;
+}
+
+.navbar-item img {
+    max-height: fit-content;
+}
+
+.navbar-item {
+    color: aliceblue;
+}
+
+#NAVBAR-ITEM  { 
+    font-weight: 500;
+}
+
+@media (min-width:1024px){
+    #NAVBAR-ITEM{
+        color: #003068;
+    }
+    
+}
+
+
+#is-successful{
+    color: #48c78e !important;
+}
+
+.color1 {
+    background-color: #004851 ;
+}
+
+.color2 {
+    background-color: #002244;
+}
+
+.color3 {
+    background-color: #0b2265;
+}
+
+.color4 {
+    background-color: #5a1414;
+}
+
+.color5 {
+    background-color: #4f2683;
+}
+
+.color6 {
+    background-color: #2a433a;
+}
+
+.color7 {
+    background-color: #0b162a;
+}
+
+.color8 {
+    background-color: #0076b6;
+}
+
+.color9 {
+    background-color: #a71930;
+}
+
+.color10 {
+    background-color: #a71930;
+}
+
+.color11 {
+    background-color: #d3bc8d;
+}
+
+.color12 {
+    background-color: #0085ca;
+}
+
+.color13 {
+    background-color: #002244;
+}
+
+.color14 {
+    background-color: #aa0000;
+}
+
+.color15 {
+    background-color: #003594;
+}
+
+.color16 {
+    background-color: #97233f;
+}
+
+.color17 {
+    background-color: #00338d;
+}
+
+.color18 {
+    background-color: #008e97;
+}
+
+.color19 {
+    background-color: #002244;
+}
+
+.color20 {
+    background-color: #115740;
+}
+
+.color21 {
+    background-color: #201747;
+}
+
+.color22 {
+    background-color: #101010;
+}
+
+.color23 {
+    background-color: #311d00;
+}
+
+.color24 {
+    background-color: #101010;
+    color: #a5acaf;;
+}
+
+.color25 {
+    background-color: #002244;
+}
+
+.color26 {
+    background-color: #013369;
+}
+
+.color27 {
+    background-color: #006778;
+}
+
+.color28 {
+    background-color: #00143f;
+}
+
+.color29 {
+    background-color: #e31837;
+}
+
+.color30 {
+    background-color: #0080c6;
+}
+
+.color31 {
+    background-color: #0a2343;
+}
+
+.color32 {
+    background-color: #a5acaf;
+}
+
+h1 #name {
+    color: white;
+}
+
+.navbar-burger {
+    color: white;
+}
+
+.field {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#inputCard h1{
+    text-underline-offset: 5px;
+}
+
+input::placeholder {
+    color:black;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#body{
+    overflow-y: hidden;
+}

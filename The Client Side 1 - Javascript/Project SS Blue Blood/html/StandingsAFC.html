@@ -1,0 +1,150 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=di, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+   <link rel="stylesheet" href="/The Client Side 1 - Javascript/Project SS Blue Blood/css/style.css">
+   <title>AFC Standings</title>
+</head>
+
+<nav class="navbar is-spaced has-shadow" id="NAVBAR" role="navigation" aria-label="main-navigation">
+
+   <div class="navbar-brand">
+       <div class="navbar-item" href="Home.html">
+         <img src="/The Client Side 1 - Javascript/Project SS Blue Blood/images/NFLwBack.png" width="170">
+       </div>
+   
+       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+         <span aria-hidden="true"></span>
+         <span aria-hidden="true"></span>
+         <span aria-hidden="true"></span>
+       </a>
+     </div> 
+
+   <div class="navbar-menu" id="navbarBasicExample">
+      <div class="navbar-start">
+         <a href="Home.html" class="text navbar-item">
+            <strong class="has-black-text">Home</strong>
+         </a>
+         <div class="navbar-item has-dropdown is-hoverable">
+           <a class="text navbar-link navbar-item">
+               <strong class="has-black-text" id="NAVBAR-ITEM2">Standings</strong>
+           </a>
+   
+           <div class="navbar-dropdown">
+             <a id="NAVBAR-ITEM" class="navbar-item" href="Standings.html">
+               NFC
+             </a>
+             <a id="NAVBAR-ITEM" class="navbar-item" href="StandingsAFC.html">
+               AFC
+             </a>
+           </div>
+         </div>
+         <a href="Admin.html" class="text navbar-item">
+            <strong class="has-black-text">Admin</strong>
+         </a>
+      </div>
+   </div>
+</nav>
+<body onload="AFCstartUp();">
+   <div class="columns">
+      <div class="column is-6">
+         <div class="card-header">
+            <p class="card-header-title">Group East</p>
+         </div>
+         <div class="card-content">
+               <!-- <input type="date" name="" id=""> -->
+               <table id="groupA" class="table is-striped">
+                  <thead>
+                     <tr>
+                        <th onclick="sort('Name', 'A', 'AFC')">NAME</th>
+                        <th onclick="sort('W', 'A', 'AFC')">WINS</th>
+                        <th onclick="sort('L', 'A', 'AFC')">LOSSES</th>
+                        <th onclick="sort('T', 'A', 'AFC')">TIES</th>
+                        <th onclick="sort('WP', 'A', 'AFC')">W%</th>
+                        <th onclick="sort('HOME', 'A', 'AFC')">HOME</th>
+                        <th onclick="sort('ROAD', 'A', 'AFC')">ROAD</th>
+                       
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table>
+         </div>
+      </div>
+      <div class="column is-6">
+         <div class="card-header">
+            <p class="card-header-title">Group North</p>
+         </div>
+         <div class="card-content">
+               <table id="groupB" class="table is-striped">
+                  <thead>
+                     <tr>
+                        <th onclick="sort('Name', 'B', 'AFC')">NAME</th>
+                        <th onclick="sort('W', 'B', 'AFC')">WINS</th>
+                        <th onclick="sort('L', 'B', 'AFC')">LOSSES</th>
+                        <th onclick="sort('T', 'B', 'AFC')">TIES</th>
+                        <th onclick="sort('WP', 'B', 'AFC')">W%</th>
+                        <th onclick="sort('HOME', 'B', 'AFC')">HOME</th>
+                        <th onclick="sort('ROAD', 'B', 'AFC')">ROAD</th>
+                       
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table>
+         </div>
+      </div>
+      </div>
+      <div class="columns">
+      <div class="column is-6">
+         <div class="card-header">
+            <p class="card-header-title">Group South</p>
+         </div>
+         <div class="card-content">
+               <table id="groupC" class="table is-striped">
+                  <thead>
+                     <tr>
+                        <th onclick="sort('Name', 'C', 'AFC')">NAME</th>
+                        <th onclick="sort('W', 'C', 'AFC')">WINS</th>
+                        <th onclick="sort('L', 'C', 'AFC')">LOSSES</th>
+                        <th onclick="sort('T', 'C', 'AFC')">TIES</th>
+                        <th onclick="sort('WP', 'C', 'AFC')">W%</th>
+                        <th onclick="sort('HOME', 'C', 'AFC')">HOME</th>
+                        <th onclick="sort('ROAD', 'C', 'AFC')">ROAD</th>
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table>
+         </div>
+      </div>
+      <div class="column is-6">
+         <div class="card-header">
+            <p class="card-header-title">Group West</p>
+         </div>
+         <div class="card-content">
+               <table id="groupD" class="table is-striped">
+                  <thead>
+                     <tr>
+                        <th onclick="sort('Name', 'D', 'AFC')">NAME</th>
+                        <th onclick="sort('W', 'D', 'AFC')">WINS</th>
+                        <th onclick="sort('L', 'D', 'AFC')">LOSSES</th>
+                        <th onclick="sort('T', 'D', 'AFC')">TIES</th>
+                        <th onclick="sort('WP', 'D', 'AFC')">W%</th>
+                        <th onclick="sort('HOME', 'D', 'AFC')">HOME</th>
+                        <th onclick="sort('ROAD', 'D', 'AFC')">ROAD</th>
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table>
+         </div>
+      </div>
+   </div>
+   </div>
+</body>
+
+<script src="/The Client Side 1 - Javascript/Project SS Blue Blood/js/Script.js"></script>
+<script src="/The Client Side 1 - Javascript/Project SS Blue Blood/js/storage.js"></script>
+</html>

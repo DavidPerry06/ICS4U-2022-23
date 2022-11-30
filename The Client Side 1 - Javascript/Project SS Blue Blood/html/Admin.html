@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/The Client Side 1 - Javascript/Project SS Blue Blood/css/style.css">
+    <title>Admin</title>
+</head>
+<nav class="navbar is-spaced has-shadow" id="NAVBAR" role="navigation" aria-label="main-navigation">
+
+    <div class="navbar-brand">
+        <div class="navbar-item" href="Home.html">
+          <img src="/The Client Side 1 - Javascript/Project SS Blue Blood/images/NFLwBack.png" width="170">
+        </div>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+ 
+    <div class="navbar-menu" id="navbarBasicExample">
+       <div class="navbar-start">
+          <a href="Home.html" class="text navbar-item">
+             <strong class="has-black-text">Home</strong>
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="text navbar-link navbar-item">
+                <strong class="has-black-text">Standings</strong>
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a id="NAVBAR-ITEM" class="navbar-item" href="Standings.html">
+                NFC
+              </a>
+              <a id="NAVBAR-ITEM" class="navbar-item" href="StandingsAFC.html">
+                AFC
+              </a>
+            </div>
+          </div>
+          <a href="Admin.html" class="text navbar-item">
+             <strong class="has-black-text">Admin</strong>
+          </a>
+       </div>
+    </div>
+ </nav>
+
+<body>
+  <div class="columns is-centered p-2">
+     <div class="column is-8">
+      <div class="card is-rounded" id="inputCard">
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <h1 class="has-text-centered is-size-3 is-underlined">User</h1>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" id="validName" type="text" placeholder="Text input">
+          </div>
+          <p class="help" id="nameError"></p>
+        </div>
+        
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="example@example.com" id="validEmail">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+          <p class="help" id="emailError"></p>
+        </div>
+      </div>
+      </div>
+          <div class="field">
+            <label class="label is-size-4">Team</label>
+            <div class="control">
+              <div class="select" id="box1">
+                <select id="team1">
+                  <option>Buffalo Bills</option>
+                  <option>Miami Dolphins</option>
+                  <option>N.Y. Jets</option>
+                  <option>New England Patriots</option>
+                  <option>Baltimore Ravens</option>
+                  <option>Cincinnati Bengals</option>
+                  <option>Cleveland Browns</option>
+                  <option>Pittsburgh Steelers</option>
+                  <option>Tennessee Titans</option>
+                  <option>Indianapolis Colts</option>
+                  <option>Jacksonville Jaguars</option>
+                  <option>Houstan Texans</option>
+                  <option>Kansas City Chiefs</option>
+                  <option>L.A. Chargers</option>
+                  <option>Las Vegas Raider</option>
+                  <option>Denver Broncos</option>
+                  <option>Philadelphia Eagles</option>
+                  <option>Dallas Cowboys</option>
+                  <option>N.Y. Giants</option>
+                  <option>Washington Commanders</option>
+                  <option>Minnesota Vikings</option>
+                  <option>Detroit Lions</option>
+                  <option>Green Bay Packers</option>
+                  <option>Chicago Bears</option>
+                  <option>Tampa Bay Buccaneers</option>
+                  <option>Atlanta Falcons</option>
+                  <option>Carolina Panthers</option>
+                  <option>New Orleans Saints</option>
+                  <option>San Francisco 49ers</option>
+                  <option>Seattle Seahawks</option>
+                  <option>Arizona Cardinals</option>
+                  <option>L.A. Rams</option>
+                </select>
+              </div>
+            </div>
+            <p class="help" id="teamOneError"></p>
+          </div>
+        
+          <div class="field">
+            <label class="label">Score</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="eg. 37" id="teamOneScore">
+            </div>
+            <p class="help" id="scoreWError"></p>
+          </div>
+          
+          <div class="field">
+            <label class="label">Type</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="eg. Home/Road" id="teamOneType">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help" id="errorMsg1"></p>
+          </div>
+
+
+          <div class="field">
+            <label class="label is-size-4">Opponent</label>
+            <div class="control">
+              <div class="select" id="box2">
+                <select id="team2">
+                  <option>Miami Dolphins</option>
+                  <option>Buffalo Bills</option>
+                  <option>N.Y. Jets</option>
+                  <option>New England Patriots</option>
+                  <option>Baltimore Ravens</option>
+                  <option>Cincinnati Bengals</option>
+                  <option>Cleveland Browns</option>
+                  <option>Pittsburgh Steelers</option>
+                  <option>Tennessee Titans</option>
+                  <option>Indianapolis Colts</option>
+                  <option>Jacksonville Jaguars</option>
+                  <option>Houstan Texans</option>
+                  <option>Kansas City Chiefs</option>
+                  <option>L.A. Chargers</option>
+                  <option>Las Vegas Raider</option>
+                  <option>Denver Broncos</option>
+                  <option>Philadelphia Eagles</option>
+                  <option>Dallas Cowboys</option>
+                  <option>N.Y. Giants</option>
+                  <option>Washington Commanders</option>
+                  <option>Minnesota Vikings</option>
+                  <option>Detroit Lions</option>
+                  <option>Green Bay Packers</option>
+                  <option>Chicago Bears</option>
+                  <option>Tampa Bay Buccaneers</option>
+                  <option>Atlanta Falcons</option>
+                  <option>Carolina Panthers</option>
+                  <option>New Orleans Saints</option>
+                  <option>San Francisco 49ers</option>
+                  <option>Seattle Seahawks</option>
+                  <option>Arizona Cardinals</option>
+                  <option>L.A. Rams</option>
+                </select>
+              </div>
+            </div>
+            <p class="help" id="teamTwoError"></p>
+          </div>
+        
+          <div class="field">
+            <label class="label">Score</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="eg. 36" id="teamTwoScore">
+            </div>
+            <p class="help" id="scoreLError"></p>
+          </div>
+          
+          <div class="field">
+            <label class="label">Type</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="eg. Home/Road" id="teamTwoType">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help" id="errorMsg2"></p>
+          </div>
+
+          <div class="field">
+            <label class="label is-size-5">DATE</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="date" id="date">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help" id="dateMsg"></p>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-3 has-text-centered">
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-danger" onclick="submit()">Submit</button>
+                </div>
+                <div class="control">
+                  <button class="button is-danger is-light">Cancel</button>
+                </div>
+              </div>
+              <p class="help" id="submitErr"></p>
+            </div>
+          </div>
+        </div>
+    
+      
+    </div>
+  </div>
+  </div>
+    
+</body>
+<script src="/The Client Side 1 - Javascript/Project SS Blue Blood/js/Script.js"></script>
+<script src="/The Client Side 1 - Javascript/Project SS Blue Blood/js/storage.js"></script>
+</html>

@@ -1,0 +1,149 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=di, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+   <link rel="stylesheet" href="/The Client Side 1 - Javascript/Project SS Blue Blood/css/style.css">
+   <title>NFC Standings</title>
+</head>
+
+<nav class="navbar is-spaced has-shadow" id="NAVBAR" role="navigation" aria-label="main-navigation">
+
+   <div class="navbar-brand">
+       <div class="navbar-item" href="Home.html">
+         <img src="/The Client Side 1 - Javascript/Project SS Blue Blood/images/NFLwBack.png" width="170">
+       </div>
+   
+       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+         <span aria-hidden="true"></span>
+         <span aria-hidden="true"></span>
+         <span aria-hidden="true"></span>
+       </a>
+     </div>
+
+   <div class="navbar-menu" id="navbarBasicExample">
+      <div class="navbar-start">
+         <a href="Home.html" class="text navbar-item">
+            <strong class="has-black-text">Home</strong>
+         </a>
+         <div class="navbar-item has-dropdown is-hoverable">
+           <a class="text navbar-link navbar-item">
+               <strong class="has-black-text">Standings</strong>
+           </a>
+   
+           <div class="navbar-dropdown">
+             <a id="NAVBAR-ITEM" class="navbar-item" href="Standings.html">
+               NFC
+             </a>
+             <a id="NAVBAR-ITEM" class="navbar-item" href="StandingsAFC.html">
+               AFC
+             </a>
+           </div>
+         </div>
+         <a href="Admin.html" class="text navbar-item">
+            <strong class="has-black-text">Admin</strong>
+         </a>
+      </div>
+   </div>
+</nav>
+<body onload="NFCstartUp();">
+   <div class="columns">
+      <div class="column is-6">
+         <div class="card-header">
+            <p class="card-header-title">Group East</p>
+         </div>
+         <div class="card-content">
+               <table id="groupA" class="table is-striped">
+                  <thead>
+                     <tr>
+                        <th onclick="sort('Name', 'A', 'NFC')">NAME</th>
+                        <th onclick="sort('W', 'A', 'NFC')">WINS</th>
+                        <th onclick="sort('L', 'A', 'NFC')">LOSSES</th>
+                        <th onclick="sort('T', 'A', 'NFC')">TIES</th>
+                        <th onclick="sort('WP', 'A', 'NFC')">W%</th>
+                        <th onclick="sort('HOME', 'A', 'NFC')">HOME</th>
+                        <th onclick="sort('ROAD', 'A', 'NFC')">ROAD</th>
+                       
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table>
+         </div>
+      </div>
+      <div class="column is-6">
+         <div class="card-header">
+            <p class="card-header-title">Group North</p>
+         </div>
+         <div class="card-content">
+               <table id="groupB" class="table is-striped">
+                  <thead>
+                     <tr>
+                        <th onclick="sort('Name', 'B', 'NFC')">NAME</th>
+                        <th onclick="sort('W', 'B', 'NFC')">WINS</th>
+                        <th onclick="sort('L', 'B', 'NFC')">LOSSES</th>
+                        <th onclick="sort('T', 'B', 'NFC')">TIES</th>
+                        <th onclick="sort('WP', 'B', 'NFC')">W%</th>
+                        <th onclick="sort('HOME', 'B', 'NFC')">HOME</th>
+                        <th onclick="sort('ROAD', 'B', 'NFC')">ROAD</th>
+                       
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table>
+         </div>
+      </div>
+      </div>
+      <div class="columns">
+      <div class="column is-6">
+         <div class="card-header">
+            <p class="card-header-title">Group South</p>
+         </div>
+         <div class="card-content">
+               <table id="groupC" class="table is-striped">
+                  <thead>
+                     <tr>
+                        <th onclick="sort('Name', 'C', 'NFC')">NAME</th>
+                        <th onclick="sort('W', 'C', 'NFC')">WINS</th>
+                        <th onclick="sort('L', 'C', 'NFC')">LOSSES</th>
+                        <th onclick="sort('T', 'C', 'NFC')">TIES</th>
+                        <th onclick="sort('WP', 'C', 'NFC')">W%</th>
+                        <th onclick="sort('HOME', 'C', 'NFC')">HOME</th>
+                        <th onclick="sort('ROAD', 'C', 'NFC')">ROAD</th>
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table>
+         </div>
+      </div>
+      <div class="column is-6">
+         <div class="card-header">
+            <p class="card-header-title">Group West</p>
+         </div>
+         <div class="card-content">
+               <table id="groupD" class="table is-striped">
+                  <thead>
+                     <tr>
+                        <th onclick="sort('Name', 'D', 'NFC')">NAME</th>
+                        <th onclick="sort('W', 'D', 'NFC')">WINS</th>
+                        <th onclick="sort('L', 'D', 'NFC')">LOSSES</th>
+                        <th onclick="sort('T', 'D', 'NFC')">TIES</th>
+                        <th onclick="sort('WP', 'D', 'NFC')">W%</th>
+                        <th onclick="sort('HOME', 'D', 'NFC')">HOME</th>
+                        <th onclick="sort('ROAD', 'D', 'NFC')">ROAD</th>
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table>
+         </div>
+      </div>
+   </div>
+   </div>
+</body>
+
+<script src="/The Client Side 1 - Javascript/Project SS Blue Blood/js/Script.js"></script>
+<script src="/The Client Side 1 - Javascript/Project SS Blue Blood/js/storage.js"></script>
+</html>
