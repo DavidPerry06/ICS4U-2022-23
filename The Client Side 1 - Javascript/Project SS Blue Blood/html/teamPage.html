@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/The Client Side 1 - Javascript/Project SS Blue Blood/css/style.css">
     <title id="team"></title>
 </head>
-<nav class="navbar is-spaced has-shadow" id="NAVBAR" role="navigation" aria-label="main-navigation">
+
+<body onload="load();">
+  <nav class="navbar is-spaced has-shadow" id="NAVBAR" role="navigation" aria-label="main-navigation">
 
     <div class="navbar-brand">
         <div class="navbar-item" href="Home.html">
@@ -47,15 +49,18 @@
        </div>
     </div>
  </nav>
-<body onload="load();">
     <section class="hero header-background">
-        <div class="hero-body">
-            <div class="container">
-              <img id="team-logo-head" width="15%" height="15%">
+        <div class="hero-body" id="hero-body">
+          <div class="columns is-centered">
+            <div class="column is-4">
+            <div class="container" id="hero-container">
+              <img id="team-logo-head" width="40%">
                 <h1 class="teamname is-size-1">
                     <div id="name"></div>
                 </h1>
             </div>
+          </div>
+        </div>
         </div>
     </section>
     <div class="columns">

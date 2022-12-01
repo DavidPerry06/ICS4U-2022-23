@@ -31,44 +31,88 @@ let tD = false;
 let homeD = false;
 let roadD = false;
 
-let nonParsedALLTeams = localStorage.getItem('allTeams');
-let AllTeams = JSON.parse(nonParsedALLTeams)
-let East = localStorage.getItem('NFCEast'); 
-let North = localStorage.getItem('NFCNorth');
-let South = localStorage.getItem('NFCSouth');
-let West = localStorage.getItem('NFCWest');
+let nonParsedALLTeams;
+
+let AllTeams;
+
+let East;
+
+let North;
+
+let South;
+
+let West;
+
 let NFCteams = localStorage.getItem('NFCTeams')
-    // ^ NFC groups
-let AFCeast = localStorage.getItem('AFCEast')
-let AFCnorth = localStorage.getItem('AFCNorth')
-let AFCsouth = localStorage.getItem('AFCSouth')
-let AFCwest = localStorage.getItem('AFCWest')
-let AFCteams = localStorage.getItem('AFCTeams')
+
+// ^ NFC groups
+let AFCeast;
+
+let AFCnorth;
+
+let AFCsouth;
+
+let AFCwest;
+
+let AFCteams;
+
 
 
   
-let AFCE = JSON.parse(AFCeast);
-let AFCN = JSON.parse(AFCnorth);
-let AFCS = JSON.parse(AFCsouth);
-let AFCW = JSON.parse(AFCwest);
-let AFCT = JSON.parse(AFCteams);
+// let AFCE;
 
-let GE = JSON.parse(East);
-let GN = JSON.parse(North);
-let GS = JSON.parse(South);
-let GW = JSON.parse(West);
-let NFCT = JSON.parse(NFCteams)
+// let AFCN;
+
+// let AFCS;
+
+// let AFCW;
+
+// let AFCT;
+
+
+// let GE;
+
+// let GN; 
+
+// let GS; 
+
+// let GW; 
+
+// let NFCT;
+// NFCT = JSON.parse(NFCteams)
    
 
     //calls the create table for each group, used to start up each page
-   function NFCstartUp() {
+   function  NFCstartUp(){
+    nonParsedALLTeams = localStorage.getItem('allTeams');
+    AllTeams = JSON.parse(nonParsedALLTeams)
+    East = localStorage.getItem('NFCEast'); 
+    North = localStorage.getItem('NFCNorth');
+    South = localStorage.getItem('NFCSouth');
+    West = localStorage.getItem('NFCWest');
+    GE = JSON.parse(East);
+    GN = JSON.parse(North);
+    GS = JSON.parse(South);
+    GW = JSON.parse(West);
       createTable(GE, 'A')
       createTable(GN, 'B');
       createTable(GS, 'C');
       createTable(GW, 'D');
    } 
    //calls the create table for each group, used to start up each page
-   function AFCstartUp() {
+   function  AFCstartUp(){
+    nonParsedALLTeams = localStorage.getItem('allTeams');
+    AllTeams = JSON.parse(nonParsedALLTeams)
+    AFCeast = localStorage.getItem('AFCEast')
+    AFCnorth = localStorage.getItem('AFCNorth')
+    AFCsouth = localStorage.getItem('AFCSouth')
+    AFCwest = localStorage.getItem('AFCWest')
+    AFCteams = localStorage.getItem('AFCTeams')
+    AFCE = JSON.parse(AFCeast);
+    AFCN = JSON.parse(AFCnorth);
+    AFCS = JSON.parse(AFCsouth);
+    AFCW = JSON.parse(AFCwest);
+    AFCT = JSON.parse(AFCteams);
     createTable(AFCE, 'A')
     createTable(AFCN, 'B');
     createTable(AFCS, 'C');
@@ -338,15 +382,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'HOME') {
             if(homeA){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  homeA = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 homeA = true;
@@ -354,15 +398,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'ROAD') {
             if(roadA){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  roadA = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 roadA = true;
@@ -422,15 +466,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'HOME') {
             if(homeB){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  homeB = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 homeB = true;
@@ -438,15 +482,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'ROAD') {
             if(roadB){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  roadB = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 roadB = true;
@@ -505,15 +549,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'HOME') {
             if(homeC){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  homeC = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 homeC = true;
@@ -521,15 +565,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'ROAD') {
             if(roadC){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  roadC = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 roadC = true;
@@ -588,15 +632,15 @@ let NFCT = JSON.parse(NFCteams)
              } else if (field === 'HOME') {
                 if(homeD){
                     teams = teams.sort((teamA, teamB) => {
-                        teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                        teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                        teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                        teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                         return (teamA < teamB) ? -1 : 1
                      });
                      homeD = false;
                 } else {
                     teams = teams.sort((teamA, teamB) => {
-                        teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                        teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                        teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                        teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                         return (teamA > teamB) ? -1 : 1
                      });
                     homeD = true;
@@ -604,15 +648,15 @@ let NFCT = JSON.parse(NFCteams)
              } else if (field === 'ROAD') {
                 if(roadD){
                     teams = teams.sort((teamA, teamB) => {
-                        teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                        teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                        teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                        teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                         return (teamA < teamB) ? -1 : 1
                      });
                      roadD = false;
                 } else {
                     teams = teams.sort((teamA, teamB) => {
-                        teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                        teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                        teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                        teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                         return (teamA > teamB) ? -1 : 1
                      });
                     roadD = true;
@@ -675,15 +719,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'HOME') {
             if(homeA){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  homeA = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 homeA = true;
@@ -691,15 +735,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'ROAD') {
             if(roadA){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  roadA = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 roadA = true;
@@ -759,15 +803,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'HOME') {
             if(homeB){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  homeB = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 homeB = true;
@@ -775,15 +819,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'ROAD') {
             if(roadB){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  roadB = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 roadB = true;
@@ -842,15 +886,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'HOME') {
             if(homeC){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  homeC = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                    teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                    teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                    teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 homeC = true;
@@ -858,15 +902,15 @@ let NFCT = JSON.parse(NFCteams)
          } else if (field === 'ROAD') {
             if(roadC){
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA < teamB) ? -1 : 1
                  });
                  roadC = false;
             } else {
                 teams = teams.sort((teamA, teamB) => {
-                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                    teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                    teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                     return (teamA > teamB) ? -1 : 1
                  });
                 roadC = true;
@@ -925,15 +969,15 @@ let NFCT = JSON.parse(NFCteams)
              } else if (field === 'HOME') {
                 if(homeD){
                     teams = teams.sort((teamA, teamB) => {
-                        teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                        teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                        teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                        teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                         return (teamA < teamB) ? -1 : 1
                      });
                      homeD = false;
                 } else {
                     teams = teams.sort((teamA, teamB) => {
-                        teamA = teamA['HOME'].substring(0, teamA['HOME'].result.indexOf('-'));
-                        teamB = teamB['HOME'].substring(0, teamB['HOME'].result.indexOf('-'));
+                        teamA = teamA['HOME'].substring(0, teamA['HOME'].indexOf('-'));
+                        teamB = teamB['HOME'].substring(0, teamB['HOME'].indexOf('-'));
                         return (teamA > teamB) ? -1 : 1
                      });
                     homeD = true;
@@ -941,15 +985,15 @@ let NFCT = JSON.parse(NFCteams)
              } else if (field === 'ROAD') {
                 if(roadD){
                     teams = teams.sort((teamA, teamB) => {
-                        teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                        teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                        teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                        teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                         return (teamA < teamB) ? -1 : 1
                      });
                      roadD = false;
                 } else {
                     teams = teams.sort((teamA, teamB) => {
-                        teamA = teamA['ROAD'].substring(0, teamA['ROAD'].result.indexOf('-'));
-                        teamB = teamB['ROAD'].substring(0, teamB['ROAD'].result.indexOf('-'));
+                        teamA = teamA['ROAD'].substring(0, teamA['ROAD'].indexOf('-'));
+                        teamB = teamB['ROAD'].substring(0, teamB['ROAD'].indexOf('-'));
                         return (teamA > teamB) ? -1 : 1
                      });
                     roadD = true;
@@ -969,7 +1013,7 @@ let NFCT = JSON.parse(NFCteams)
             valid = document.querySelector('#validName');
             msg = document.querySelector('#nameError');
             console.log(valid)
-            if(input == 'Lebrahn Jahames'){
+            if(input == 'rizz'){
                 valid.classList.remove('is-danger')
                 valid.classList.add('is-success')
                 msg.classList.remove('has-text-danger')
@@ -992,7 +1036,7 @@ let NFCT = JSON.parse(NFCteams)
         valid = document.querySelector('#validEmail');
         msg = document.querySelector('#emailError');
         console.log(valid)
-        if(input == 'bball4life@ball.com'){
+        if(input == 'rizz'){
             valid.classList.remove('is-danger')
             valid.classList.add('is-success')
             msg.classList.remove('has-text-danger')
@@ -1108,12 +1152,12 @@ let NFCT = JSON.parse(NFCteams)
     }
 //gets the date of the match
     function getDate() {
-        let date = document.getElementById('date').value;
-        let month = date.substring(0, date.indexOf('/'))
-        let day = date.substring(date.indexOf('/')+1, date.lastIndexOf('/'))
-        let year = date.substring(date.lastIndexOf('/')+1)
+        let date = JSON.stringify(document.getElementById('date').value);
+        let year = date.substring(1,5)
+        let month = date.substring(date.indexOf('-')+1, date.lastIndexOf('-'))
+        let day = date.substring(date.lastIndexOf('-')+1, date.lastIndexOf('-')+3 )
 
-        let newDate = day +'' + month +'' + year
+        let newDate = day +'/' + month +'/' + year
 
         return newDate;
     }
@@ -1173,9 +1217,11 @@ let NFCT = JSON.parse(NFCteams)
 
         
     }
+
+    //validName() && validEmail()
 //calls all valid functions in one place to make sure they are all true at the same time
     function isValid(){
-        if(validName() && validEmail() && validTeams() && validType() && validDate() && validScore()){
+        if(validTeams() && validDate() && validScore()){
             return true;
         } else {
             return false;
@@ -1255,8 +1301,8 @@ let NFCT = JSON.parse(NFCteams)
         let teams = JSON.parse(localStorage.getItem('allTeams'));
         let score1 = parseInt(document.getElementById('teamOneScore').value);
         let score2 = parseInt(document.getElementById('teamTwoScore').value);
-        let type1 = (document.getElementById('teamOneType').value).toUpperCase()
-        let type2 = (document.getElementById('teamTwoType').value).toUpperCase()
+        let type1 = 'Home';
+        let type2 = 'Away';
         let teamValue = (document.getElementById('team1').value).toUpperCase()
         let team = teamValue.substring(teamValue.lastIndexOf(' ') +1)
         let oppValue = (document.getElementById('team2').value).toUpperCase()
@@ -1401,115 +1447,143 @@ let NFCT = JSON.parse(NFCteams)
         console.log(team2ID)
         team1['GAMES'].push(winnerGame)
         team2['GAMES'].push(loserGame)
-        teams.splice(team1ID,1,updatedTeamOne)
-        teams.splice(team2ID,1,updatedTeamTwo)
-        newTeams = teams
-        localStorage.setItem('allTeams', JSON.stringify(newTeams)); //into all teams and the corresponding group 
+        // teams.splice(team1ID,1,team1)
+        // teams.splice(team2ID,1,team2)
+        // newTeams = teams
+        localStorage.setItem('allTeams', JSON.stringify(teams)); //into all teams and the corresponding group 
         console.log(allTeams)
         console.log(teams)
-        // yes was 9 before, started at 8 but I havet reset storage yet
 
         if(team1.id> 0 && team1.id<5){
             group = JSON.parse(localStorage['NFCEast'])
-            group.splice(team1ID,1,updatedTeamOne)
-            NFCEast = group
-            localStorage.setItem('NFCEast', JSON.stringify(NFCEast))
-            NFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            // group.splice(team1ID,1,updatedTeamOne)
+            localStorage.setItem('NFCEast', JSON.stringify(group))
         } else if(team1.id> 4 && team1.id<9){
             group = JSON.parse(localStorage['NFCNorth'])
-            group.splice(team1ID,1,updatedTeamOne)
-            NFCNorth = group
-            localStorage.setItem('NFCNorth', JSON.stringify(NFCNorth))
-            NFCstartUp() //I have it redo the startup for that page when the data is changed, but that aint working, this start up is only the create games
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            // group.splice(team1ID,1,updatedTeamOne)
+            localStorage.setItem('NFCNorth', JSON.stringify(group))
         } else if(team1.id> 8 && team1.id<13){
             group = JSON.parse(localStorage['NFCSouth'])
-            group.splice(team1ID,1,updatedTeamOne)
-            NFCSouth = group
-            localStorage.setItem('NFCSouth', JSON.stringify(NFCSouth))
-            NFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            // group.splice(team1ID,1,updatedTeamOne)
+            localStorage.setItem('NFCSouth', JSON.stringify(group))
+            
         } else if(team1.id> 12 && team1.id<17){
             group = JSON.parse(localStorage['NFCWest'])
-            group.splice(team1ID,1,updatedTeamOne)
-            NFCWest = group
-            localStorage.setItem('NFCWest', JSON.stringify(NFCWest))
-            NFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            // group.splice(team1ID,1,updatedTeamOne)
+            localStorage.setItem('NFCWest', JSON.stringify(group))
+            
         } else if(team1.id> 16 && team1.id<21){
             group = JSON.parse(localStorage['AFCEast'])
-            group.splice(team1ID,1,updatedTeamOne)
-            AFCEast = group
-            localStorage.setItem('AFCEast', JSON.stringify(AFCEast))
-            AFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+
+            localStorage.setItem('AFCEast', JSON.stringify(group))
+            
         } else if(team1.id> 20 && team1.id<25){
             group = JSON.parse(localStorage['AFCNorth'])
-            group.splice(team1ID,1,updatedTeamOne)
-            AFCNorth = group
-            localStorage.setItem('AFCNorth', JSON.stringify(AFCNorth))
-            AFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            
+            localStorage.setItem('AFCNorth', JSON.stringify(group))
+            
         } else if(team1.id> 24 && team1.id<29){
             group = JSON.parse(localStorage['AFCSouth'])
-            group.splice(team1ID,1,updatedTeamOne)
-            AFCSouth = group
-            localStorage.setItem('AFCSouth', JSON.stringify(AFCSouth))
-            AFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+     
+            localStorage.setItem('AFCSouth', JSON.stringify(group))
         } else {
             group = JSON.parse(localStorage['AFCWest'])
-            group.splice(team1ID,1,updatedTeamOne)
-            AFCWest = group
-            localStorage.setItem('AFCWest', JSON.stringify(AFCWest))
-            AFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            localStorage.setItem('AFCWest', JSON.stringify(group))
+            
         }
 
         if(team2.id> 0 && team2.id<5){
             group = JSON.parse(localStorage['NFCEast'])
-            group.splice(team2ID,1,updatedTeamTwo)
-            NFCEast = group
-            localStorage.setItem('NFCEast', JSON.stringify(NFCEast))
-            NFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+          
+            localStorage.setItem('NFCEast', JSON.stringify(group))
+            
         } else if(team2.id> 4 && team2.id<9){
             group = JSON.parse(localStorage['NFCNorth'])
-            group.splice(team2ID,1,updatedTeamTwo)
-            NFCNorth = group
-            localStorage.setItem('NFCNorth', JSON.stringify(NFCNorth))
-            NFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            localStorage.setItem('NFCNorth', JSON.stringify(group))
+            
         } else if(team2.id> 8 && team2.id<13){
             group = JSON.parse(localStorage['NFCSouth'])
-            group.splice(team2ID,1,updatedTeamTwo)
-            NFCSouth = group
-            localStorage.setItem('NFCSouth', JSON.stringify(NFCSouth))
-            NFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            localStorage.setItem('NFCSouth', JSON.stringify(group))
+            
         }  else if (team2.id>12 && team2.id < 17){
             group = JSON.parse(localStorage['NFCWest'])
-            group.splice(team2ID,1,updatedTeamTwo)
-            NFCWest = group
-            localStorage.setItem('NFCWest', JSON.stringify(NFCWest))
-            NFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+    
+            localStorage.setItem('NFCWest', JSON.stringify(group))
+            
         }   else if(team2.id> 16 && team2.id<21){
+
             group = JSON.parse(localStorage['AFCEast'])
-            group.splice(team2ID,1,updatedTeamTwo)
-            AFCEast = group
-            localStorage.setItem('AFCEast', JSON.stringify(AFCEast))
-            AFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+       
+            localStorage.setItem('AFCEast', JSON.stringify(group))
+            
      
         } else if(team2.id> 20 && team2.id<25){
             group = JSON.parse(localStorage['AFCNorth'])
-            group.splice(team2ID,1,updatedTeamTwo)
-            AFCNorth = group
-            localStorage.setItem('AFCNorth', JSON.stringify(AFCNorth))
-            AFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            // group.splice(team1ID,1,updatedTeamOne)
+     
+            localStorage.setItem('AFCNorth', JSON.stringify(group))
+            
             
         } else if(team2.id> 24 && team2.id<29){
             group = JSON.parse(localStorage['AFCSouth'])
-            group.splice(team2ID,1,updatedTeamTwo)
-            AFCSouth = group
-            localStorage.setItem('AFCSouth', JSON.stringify(AFCSouth))
-            AFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            // group.splice(team1ID,1,updatedTeamOne)
+         
+            localStorage.setItem('AFCSouth', JSON.stringify(group))
+            
             
         } else {
             group = JSON.parse(localStorage['AFCWest'])
-            group.splice(team2ID,1,updatedTeamTwo)
-            AFCWest = group
-            localStorage.setItem('AFCWest', JSON.stringify(AFCWest))
-            AFCstartUp()
+            group = group.filter((team)=>team.id!=team1.id);
+            group.push(team1);
+
+            // group.splice(team1ID,1,updatedTeamOne)
+            localStorage.setItem('AFCWest', JSON.stringify(group))
+            
         }
         
         

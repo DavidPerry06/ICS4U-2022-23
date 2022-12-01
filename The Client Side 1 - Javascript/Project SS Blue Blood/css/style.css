@@ -197,10 +197,23 @@ table {
 
 h1 #name {
     color: white;
+    font-weight: 500;
 }
 
 .navbar-burger {
     color: white;
+}
+
+#hero-body{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#hero-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
 }
 
 .field {

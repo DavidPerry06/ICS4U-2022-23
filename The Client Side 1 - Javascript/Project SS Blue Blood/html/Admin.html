@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="/The Client Side 1 - Javascript/Project SS Blue Blood/css/style.css">
     <title>Admin</title>
 </head>
-<nav class="navbar is-spaced has-shadow" id="NAVBAR" role="navigation" aria-label="main-navigation">
+
+
+<body>
+  <nav class="navbar is-spaced has-shadow" id="NAVBAR" role="navigation" aria-label="main-navigation">
 
     <div class="navbar-brand">
         <div class="navbar-item" href="Home.html">
@@ -47,8 +50,6 @@
        </div>
     </div>
  </nav>
-
-<body>
   <div class="columns is-centered p-2">
      <div class="column is-8">
       <div class="card is-rounded" id="inputCard">
@@ -79,7 +80,7 @@
       </div>
       </div>
           <div class="field">
-            <label class="label is-size-4">Team</label>
+            <label class="label is-size-4">Home Team</label>
             <div class="control">
               <div class="select" id="box1">
                 <select id="team1">
@@ -128,24 +129,10 @@
             </div>
             <p class="help" id="scoreWError"></p>
           </div>
-          
-          <div class="field">
-            <label class="label">Type</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input" type="text" placeholder="eg. Home/Road" id="teamOneType">
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
-              <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-              </span>
-            </div>
-            <p class="help" id="errorMsg1"></p>
-          </div>
 
 
           <div class="field">
-            <label class="label is-size-4">Opponent</label>
+            <label class="label is-size-4">Away Team</label>
             <div class="control">
               <div class="select" id="box2">
                 <select id="team2">
@@ -195,19 +182,6 @@
             <p class="help" id="scoreLError"></p>
           </div>
           
-          <div class="field">
-            <label class="label">Type</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input" type="text" placeholder="eg. Home/Road" id="teamTwoType">
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
-              <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-              </span>
-            </div>
-            <p class="help" id="errorMsg2"></p>
-          </div>
 
           <div class="field">
             <label class="label is-size-5">DATE</label>
