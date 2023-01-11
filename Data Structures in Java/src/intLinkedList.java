@@ -77,6 +77,17 @@ public class intLinkedList {
         return null;
     }
 
+    public Integer removeFront() {
+        if(head==null){
+            return null;
+        } else {
+            Integer temp = head.getData();
+            head = head.getLink();
+            manyItems--;
+            return temp;
+        }
+    }
+
     public String toString() {
         String result = "{";
         IntNode curr = head;
