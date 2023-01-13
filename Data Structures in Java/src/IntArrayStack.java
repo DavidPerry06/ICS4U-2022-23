@@ -54,22 +54,15 @@ public class IntArrayStack {
 
     public Integer search(Integer data){
         if (stack.length != 0){
-            int stackSize = stack.length;
-            int i = 0;
-    
-            while (i < stackSize) {
+            for(int i=top; i>=0; i--) {
                 if (stack[i] == data) {
-                    return i+1;
+                    return top - i;
                 }
-                i++;
             }
-
-            return null;
-
-        }else{
-            return null;
+            return -1;
         }
-        
+        return -1;
+       
     }
 
     public boolean empty(){
