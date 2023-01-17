@@ -1,9 +1,9 @@
-public class intLinkedList {
+public class IntLinkedList {
 
     private IntNode head;
     private int manyItems = 0;
 
-    public intLinkedList() {
+    public IntLinkedList() {
         this.head = null;
         this.manyItems = 0;
     }
@@ -107,6 +107,23 @@ public class intLinkedList {
 
     public int size() {
         return manyItems;
+    }
+
+    public Integer get(int index){
+        if(index < 0) {
+            throw new IndexOutOfBoundsException("The number is not the List");
+        }
+        if(head == null) {
+            throw new IllegalStateException("Can't get an element from an empty list.");
+        } else if(index > size()) {
+            throw new IndexOutOfBoundsException("Invalid index " + index + " max index is " + (size()-1));
+        } {
+            IntNode curr = head;
+            for (int i = 0; i < index; i++){
+                curr = curr.getLink();
+            }
+            return curr.getData();
+        }
     }
 
 }
