@@ -8,9 +8,9 @@ const PORT = process.env.PORT || 5000
 app.use(express.json())
 
 let students = [
-    {id: 1, name: 'Fred', age: 16},
-    {id: 2, name: 'Michael', age: 17},
-    {id: 3, name: 'Kyle', age: 14},
+    {id: 1, name: 'Fred', age: 78},
+    {id: 2, name: 'Grant', age: 42},
+    {id: 3, name: 'David', age: 17},
 ]
 
 //create endpoint (routes)
